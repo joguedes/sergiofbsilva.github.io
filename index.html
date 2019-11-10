@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>And counting ...</title>
+	<style type="text/css">
+		.content {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			-webkit-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+			font-family: 'Changa One', serif;
+			font-size: 28em;
+		}
+	</style>
+	<link href="https://fonts.googleapis.com/css?family=Changa+One&display=swap" rel="stylesheet">
+</head>
+<body>
+	<!-- partial:index.partial.html -->
+	<div id="time" class="content">
+	</div>
+	<!-- partial -->
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+		  var start = moment.unix(1561071600);
+		  var now = moment();
+		  var diff = now.diff(start, 'weeks');
+		  $("#time").text(diff);
+		});
+	</script>
+</body>
+</html>
